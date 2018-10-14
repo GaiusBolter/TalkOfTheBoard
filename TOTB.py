@@ -24,7 +24,7 @@ class TalkOfTheBoard:
         """
             Reads the configuration file and sets up the script
             Defaults to config.txt if no configuration file is specified.
-            If you want to modify the bot configuration, edit your config.txt.
+            If you want to modify the software configuration, edit your config.txt.
         """
         if os.path.isfile(config_file):
             with open(config_file, "r") as file_reader:
@@ -50,14 +50,16 @@ class TalkOfTheBoard:
 
 
 def main():
-    # Welcome Screen and ASCII
-    welcome()
-
-if __name__ == "__main__":
     try:
         clear()
         welcome()
-        TODB = TalkOfTheBoard()
+        TOTB = TalkOfTheBoard()
+        print(TOTB.TOTB_CONFIG["SAVE_DIR"])
     except KeyboardInterrupt:
         end()
         exit(0)
+
+
+if __name__ == "__main__":
+    main()
+
