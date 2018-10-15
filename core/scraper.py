@@ -26,4 +26,4 @@ def download():
         print("Downloading " + filename)
         urlretrieve("http:" + pic['href'], os.path.join(os.getcwd(), filename))
 
-download()
+
