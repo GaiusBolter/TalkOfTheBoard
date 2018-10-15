@@ -8,6 +8,7 @@
 ######################################################
 import os.path
 from core.screen import *
+from core.menu import *
 
 
 class TalkOfTheBoard:
@@ -51,10 +52,10 @@ class TalkOfTheBoard:
 
 def main():
     try:
-        clear()
-        welcome()
-        TOTB = TalkOfTheBoard()
-        print(TOTB.TOTB_CONFIG["SAVE_DIR"])
+        clear()  # Clear screen
+        welcome()  # Print Welcome logo
+        totb = TalkOfTheBoard()  # Store TalkOfTheBoard class in a variable, if you want to grab config out
+        get_options(TOTB_PROMPT, menu_options)  # Allow user input, menu_options is the initial menu. hangs
     except KeyboardInterrupt:
         end()
         exit(0)
