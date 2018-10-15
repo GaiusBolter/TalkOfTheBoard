@@ -7,7 +7,7 @@ def validate():
     url = input("Enter the URL: ")
     validurl = urlparse(url)
 
-    while validurl.scheme != 'http' and validurl.scheme != "https":
+    while validurl.scheme == "" or validurl.netloc == "" or validurl.path == "":
         url = input("Invalid URL. Enter correct URL: ")
         validurl = urlparse(url)
 
@@ -25,5 +25,3 @@ def download():
         filename=pic['href'].split("/")[-1]
         print("Downloading " + filename)
         urlretrieve("http:" + pic['href'], os.path.join(os.getcwd(), filename))
-
-
